@@ -5,16 +5,28 @@
  */
 package git_java;
 
+import dao.Idao;
+import java.util.Collections;
+import java.util.List;
+
 /**
  *
  * @author fil
  */
 public class controler {
+     private Idao dao;
+   
+    public controler (Idao dao){
+        this.dao=dao;
+    }
     
-    
-     public int getMaxnumbers(){
-            
-         throw new UnsupportedOperationException("Not implemented yet");
-          
+    public int getMaxnumbers(){
+             //throw new UnsupportedOperationException("Not implemented yet");
+        int i;
+        List<Integer> numberCon = dao.getNumbers();
+        if(!numberCon.isEmpty())
+        i = Collections.max(numberCon);
+        else i=0;
+        return i;   
     }
 }
