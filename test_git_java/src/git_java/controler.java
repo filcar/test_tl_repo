@@ -19,7 +19,16 @@ public class controler {
     public controler (Idao dao){
         this.dao=dao;
     }
-    
+    public int getMinnumbers()
+    {
+        int i;
+        List<Integer> numberCon = dao.getNumbers();
+        if(!numberCon.isEmpty())
+        i = Collections.min(numberCon);
+        else i=0;
+        return i; 
+    }
+            
     public int getMaxnumbers(){
              //throw new UnsupportedOperationException("Not implemented yet");
         int i;
